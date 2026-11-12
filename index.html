@@ -1,0 +1,694 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="ru"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</p>
+<p class="p1">&lt;title&gt;TRANSFORMERS · Fan Hub&lt;/title&gt;</p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1">*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}</p>
+<p class="p1">:root{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--bg:#0a0807; --bg-2:#0f0c0a; --surface:#171310; --surface-2:#1f1a15;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--border:rgba(245,158,11,.1); --border-strong:rgba(245,158,11,.28);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--text:#faf5ef; --muted:#8a8078;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--accent:#f59e0b; --accent-2:#ef4444; --cool:#38bdf8;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--radius:14px; --radius-lg:20px; --max:1220px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--font:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;</p>
+<p class="p1">}</p>
+<p class="p1">html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}</p>
+<p class="p1">body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}</p>
+<p class="p1">img,svg{display:block;max-width:100%}</p>
+<p class="p1">a{color:inherit;text-decoration:none}</p>
+<p class="p1">button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}</p>
+<p class="p1">[hidden]{display:none!important}</p>
+<p class="p1">.wrap{width:min(100% - 40px,var(--max));margin-inline:auto}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ФОН */</p>
+<p class="p1">.bg{position:fixed;inset:0;z-index:-2;pointer-events:none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:</p>
+<p class="p1"><span class="Apple-converted-space">    </span>radial-gradient(800px 500px at 15% -5%,rgba(245,158,11,.1),transparent 70%),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>radial-gradient(700px 500px at 90% 15%,rgba(239,68,68,.06),transparent 70%),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>linear-gradient(180deg,var(--bg) 0%,var(--bg-2) 50%,var(--bg) 100%)}</p>
+<p class="p1">.bg::after{content:"";position:absolute;inset:0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background-image:linear-gradient(rgba(245,158,11,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(245,158,11,.03) 1px,transparent 1px);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background-size:80px 80px;mask-image:radial-gradient(circle at 50% 20%,#000 0%,transparent 70%)}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ХЕДЕР */</p>
+<p class="p1">header{position:sticky;top:0;z-index:100;background:rgba(10,8,7,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(245,158,11,.08)}</p>
+<p class="p1">.nav{display:flex;align-items:center;gap:8px;height:68px}</p>
+<p class="p1">.brand{display:flex;align-items:center;gap:12px;margin-right:auto}</p>
+<p class="p1">.brand-mark{width:26px;height:26px;flex:none;background:linear-gradient(135deg,var(--accent),var(--accent-2));clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);box-shadow:0 0 20px -5px var(--accent)}</p>
+<p class="p1">.brand-text{display:flex;flex-direction:column;line-height:1}</p>
+<p class="p1">.brand-text b{font-weight:900;letter-spacing:.18em;font-size:13px}</p>
+<p class="p1">.brand-text small{font-size:9px;letter-spacing:.24em;color:var(--muted);margin-top:2px}</p>
+<p class="p1">.nav-links{display:flex;gap:2px;list-style:none}</p>
+<p class="p1">.nav-links a{display:flex;align-items:center;padding:9px 16px;border-radius:8px;font-size:13px;font-weight:600;color:var(--muted);transition:all .2s ease}</p>
+<p class="p1">.nav-links a:hover{color:var(--text);background:rgba(245,158,11,.06)}</p>
+<p class="p1">.nav-links a.active{color:var(--accent);background:rgba(245,158,11,.1)}</p>
+<p class="p1">.burger{display:none;width:40px;height:40px;border-radius:8px;border:1px solid var(--border);position:relative}</p>
+<p class="p1">.burger span{position:absolute;left:11px;width:18px;height:2px;background:var(--text);border-radius:2px;transition:.3s}</p>
+<p class="p1">.burger span:nth-child(1){top:13px}.burger span:nth-child(2){top:19px}.burger span:nth-child(3){top:25px}</p>
+<p class="p1">.burger.open span:nth-child(1){top:19px;transform:rotate(45deg)}</p>
+<p class="p1">.burger.open span:nth-child(2){opacity:0}</p>
+<p class="p1">.burger.open span:nth-child(3){top:19px;transform:rotate(-45deg)}</p>
+<p class="p2"><br></p>
+<p class="p1">/* СЕКЦИИ */</p>
+<p class="p1">.section{padding:90px 0}</p>
+<p class="p1">.section-head{margin-bottom:44px;max-width:720px}</p>
+<p class="p1">.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}</p>
+<p class="p1">.eyebrow::before{content:"";width:24px;height:1px;background:var(--accent)}</p>
+<p class="p1">h2.section-title{font-size:clamp(28px,4vw,46px);font-weight:900;letter-spacing:-.03em;line-height:1.05;text-transform:uppercase;margin-bottom:16px}</p>
+<p class="p1">h2.section-title em{font-style:normal;color:var(--accent)}</p>
+<p class="p1">.section-sub{color:var(--muted);font-size:15px;max-width:600px}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ГЕРОЙ */</p>
+<p class="p1">.hero{padding:70px 0 50px;min-height:calc(100vh - 68px);display:flex;align-items:center}</p>
+<p class="p1">.hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center;width:100%}</p>
+<p class="p1">.hero h1{font-size:clamp(42px,6.5vw,84px);font-weight:900;letter-spacing:-.04em;line-height:.95;text-transform:uppercase;margin-bottom:26px}</p>
+<p class="p1">.hero h1 em{font-style:normal;display:inline-block;background:linear-gradient(105deg,var(--accent) 0%,var(--accent-2) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}</p>
+<p class="p1">.hero-sub{color:var(--muted);font-size:clamp(15px,1.5vw,17px);max-width:520px;margin-bottom:34px}</p>
+<p class="p1">.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}</p>
+<p class="p1">.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:10px;font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;transition:all .25s ease;border:1px solid transparent}</p>
+<p class="p1">.btn-primary{background:var(--accent);color:#0a0807}</p>
+<p class="p1">.btn-primary:hover{background:#fbbf24;transform:translateY(-2px);box-shadow:0 12px 30px -10px var(--accent)}</p>
+<p class="p1">.btn-ghost{border-color:var(--border-strong);color:var(--text)}</p>
+<p class="p1">.btn-ghost:hover{background:rgba(245,158,11,.08);border-color:var(--accent);transform:translateY(-2px)}</p>
+<p class="p1">.btn svg{width:16px;height:16px;flex:none}</p>
+<p class="p1">.hero-stats{display:grid;grid-template-columns:repeat(3,auto);gap:40px;width:fit-content}</p>
+<p class="p1">.stat b{font-size:clamp(26px,3vw,34px);font-weight:900;letter-spacing:-.02em;line-height:1;color:var(--text)}</p>
+<p class="p1">.stat b span{color:var(--accent);font-size:.7em}</p>
+<p class="p1">.stat small{display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:6px}</p>
+<p class="p1">.hero-visual{position:relative;display:grid;place-items:center;min-height:440px}</p>
+<p class="p1">.hero-emblem{width:min(100%,360px);filter:drop-shadow(0 20px 60px rgba(245,158,11,.15));animation:float 6s ease-in-out infinite}</p>
+<p class="p1">@keyframes float{50%{transform:translateY(-12px)}}</p>
+<p class="p1">.hero-emblem .mark{fill:none;stroke:var(--accent);stroke-width:5;stroke-linejoin:round;stroke-linecap:round}</p>
+<p class="p1">.hero-emblem .eye{fill:var(--accent-2)}</p>
+<p class="p1">.hero-badge{position:absolute;display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;background:rgba(23,19,16,.9);border:1px solid var(--border-strong);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}</p>
+<p class="p1">.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent)}</p>
+<p class="p1">.hero-badge-1{top:16%;left:-10px;animation:float 5s ease-in-out infinite}</p>
+<p class="p1">.hero-badge-2{bottom:18%;right:-10px;animation:float 7s ease-in-out infinite .5s}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ИСТОРИЯ (Заменённый текст) */</p>
+<p class="p1">.story{display:grid;grid-template-columns:1.5fr 1fr;gap:44px;align-items:center;padding:44px;margin-top:20px;border:1px solid var(--border);border-radius:var(--radius-lg);background:linear-gradient(170deg,var(--surface),var(--surface-2))}</p>
+<p class="p1">.story h3{font-size:clamp(22px,2.6vw,30px);font-weight:900;text-transform:uppercase;letter-spacing:-.02em;margin-bottom:16px}</p>
+<p class="p1">.story h3 em{font-style:normal;color:var(--accent)}</p>
+<p class="p1">.story p{color:var(--muted);font-size:15px;line-height:1.7;margin-bottom:14px}</p>
+<p class="p1">.story p:last-child{margin-bottom:0}</p>
+<p class="p1">.story-facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}</p>
+<p class="p1">.fact{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:7px 12px;border-radius:7px;background:rgba(245,158,11,.1);color:var(--accent);border:1px solid var(--border-strong)}</p>
+<p class="p1">.story-art{display:grid;place-items:center}</p>
+<p class="p1">.story-art svg{width:min(100%,230px)}</p>
+<p class="p2"><br></p>
+<p class="p1">/* КАРТОЧКИ-ОСОБЕННОСТИ */</p>
+<p class="p1">.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}</p>
+<p class="p1">.feature-card{padding:28px 24px;border-radius:var(--radius-lg);background:linear-gradient(170deg,var(--surface),var(--surface-2));border:1px solid var(--border);transition:all .25s ease;display:flex;flex-direction:column;gap:14px;min-height:230px}</p>
+<p class="p1">.feature-card:hover{border-color:var(--border-strong);transform:translateY(-4px)}</p>
+<p class="p1">.feature-icon{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;background:rgba(245,158,11,.1);color:var(--accent)}</p>
+<p class="p1">.feature-icon svg{width:22px;height:22px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}</p>
+<p class="p1">.feature-card h3{font-size:17px;font-weight:800;text-transform:uppercase}</p>
+<p class="p1">.feature-card p{font-size:13px;color:var(--muted);line-height:1.55}</p>
+<p class="p1">.feature-card .arrow{margin-top:auto;color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ФИЛЬМЫ — горизонтальная редакционная карточка */</p>
+<p class="p1">.movies-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(500px,1fr));gap:20px}</p>
+<p class="p1">.movie-card{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius:var(--radius-lg);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:linear-gradient(170deg,var(--surface),var(--surface-2));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border:1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>overflow:hidden;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:grid;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>grid-template-columns:190px 1fr;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition:all .3s ease;</p>
+<p class="p1">}</p>
+<p class="p1">.movie-card:hover{transform:translateY(-4px);border-color:var(--border-strong);box-shadow:0 20px 40px -20px rgba(0,0,0,.6)}</p>
+<p class="p1">.movie-poster{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position:relative;overflow:hidden;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:linear-gradient(160deg,#1d1712,#0f0c0a);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-right:1px solid var(--border);</p>
+<p class="p1">}</p>
+<p class="p1">.movie-poster img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}</p>
+<p class="p1">.movie-card:hover .movie-poster img{transform:scale(1.05)}</p>
+<p class="p1">.poster-year{position:absolute;top:12px;left:12px;z-index:3;padding:4px 9px;border-radius:6px;background:rgba(10,8,7,.9);font-size:11px;font-weight:800;letter-spacing:.08em;color:var(--accent);border:1px solid var(--border-strong)}</p>
+<p class="p1">.movie-body{padding:22px 24px;display:flex;flex-direction:column;gap:8px}</p>
+<p class="p1">.movie-type{font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}</p>
+<p class="p1">.movie-body h3{font-size:17px;font-weight:800;line-height:1.25;letter-spacing:-.01em;margin-bottom:2px}</p>
+<p class="p1">.movie-desc{font-size:13px;color:var(--muted);line-height:1.65;margin-top:4px}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ФИГУРКИ */</p>
+<p class="p1">.figures-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:18px}</p>
+<p class="p1">.figure-card{border-radius:var(--radius-lg);background:linear-gradient(170deg,var(--surface),var(--surface-2));border:1px solid var(--border);padding:18px;display:flex;flex-direction:column;gap:12px;transition:all .3s ease}</p>
+<p class="p1">.figure-card:hover{transform:translateY(-4px);border-color:var(--border-strong)}</p>
+<p class="p1">.figure-image{width:100%;aspect-ratio:1;border-radius:10px;overflow:hidden;border:1px solid var(--border);background:#0f0c0a}</p>
+<p class="p1">.figure-image svg{width:100%;height:100%}</p>
+<p class="p1">.figure-brand{font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}</p>
+<p class="p1">.figure-card h3{font-size:15px;font-weight:800;line-height:1.3}</p>
+<p class="p1">.figure-meta{font-size:12px;color:var(--muted);line-height:1.5;padding:10px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}</p>
+<p class="p1">.figure-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:auto}</p>
+<p class="p1">.figure-price{font-size:16px;font-weight:800;color:var(--text)}</p>
+<p class="p1">.badge-status{font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:5px 9px;border-radius:5px}</p>
+<p class="p1">.badge-status.pre{background:rgba(245,158,11,.15);color:var(--accent)}</p>
+<p class="p1">.badge-status.in{background:rgba(56,189,248,.12);color:var(--cool)}</p>
+<p class="p2"><br></p>
+<p class="p1">/* МЕРЧ */</p>
+<p class="p1">.merch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}</p>
+<p class="p1">.merch-card{border-radius:var(--radius-lg);background:var(--surface);border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column;transition:all .3s ease}</p>
+<p class="p1">.merch-card:hover{transform:translateY(-4px);border-color:var(--border-strong)}</p>
+<p class="p1">.merch-visual{height:180px;display:grid;place-items:center;background:radial-gradient(circle at 50% 0%,rgba(245,158,11,.1),transparent 70%),linear-gradient(160deg,#1a1511,#0f0c0a);border-bottom:1px solid var(--border);color:var(--accent)}</p>
+<p class="p1">.merch-visual svg{width:56px;opacity:.85}</p>
+<p class="p1">.merch-body{padding:18px 20px 22px;display:flex;flex-direction:column;gap:8px;flex:1}</p>
+<p class="p1">.merch-body h3{font-size:15px;font-weight:800;line-height:1.3}</p>
+<p class="p1">.merch-body p{font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:auto}</p>
+<p class="p1">.merch-footer{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:14px;padding-top:14px;border-top:1px solid var(--border)}</p>
+<p class="p1">.merch-price{font-size:15px;font-weight:800}</p>
+<p class="p1">.btn-sm{padding:8px 14px;border-radius:7px;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;background:rgba(245,158,11,.12);color:var(--accent);transition:all .2s ease}</p>
+<p class="p1">.btn-sm:hover{background:var(--accent);color:#0a0807}</p>
+<p class="p2"><br></p>
+<p class="p1">/* СООБЩЕСТВО */</p>
+<p class="p1">.community-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}</p>
+<p class="p1">.comm-card{padding:28px;border-radius:var(--radius-lg);background:var(--surface);border:1px solid var(--border);display:flex;flex-direction:column;gap:14px}</p>
+<p class="p1">.comm-card h3{font-size:17px;font-weight:800}</p>
+<p class="p1">.comm-card p{font-size:13px;color:var(--muted);line-height:1.55}</p>
+<p class="p1">.quiz-q{font-size:14px;font-weight:600;color:var(--text);margin-bottom:10px}</p>
+<p class="p1">.quiz-opt{display:block;width:100%;text-align:left;padding:11px 14px;margin-bottom:8px;border-radius:8px;border:1px solid var(--border);font-size:13px;font-weight:500;transition:all .2s ease}</p>
+<p class="p1">.quiz-opt:hover{border-color:var(--accent);background:rgba(245,158,11,.06)}</p>
+<p class="p1">.quiz-opt.correct{border-color:var(--accent);background:rgba(245,158,11,.12);font-weight:700}</p>
+<p class="p1">.quiz-result{font-size:13px;font-weight:600;color:var(--accent);padding:12px 14px;border-radius:8px;background:rgba(245,158,11,.08);border:1px solid var(--border-strong);display:none}</p>
+<p class="p1">.quiz-result.show{display:block}</p>
+<p class="p1">.poll-result{font-size:12px;color:var(--muted);margin-top:8px;min-height:16px;font-weight:600}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ФУТЕР */</p>
+<p class="p1">footer{border-top:1px solid var(--border);padding:36px 0;color:var(--muted);font-size:12px}</p>
+<p class="p1">.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}</p>
+<p class="p2"><br></p>
+<p class="p1">/* АНИМАЦИИ */</p>
+<p class="p1">@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}</p>
+<p class="p1">.anim{animation:fadeUp .55s ease-out both}</p>
+<p class="p1">.anim-d1{animation-delay:.05s}.anim-d2{animation-delay:.1s}.anim-d3{animation-delay:.15s}</p>
+<p class="p2"><br></p>
+<p class="p1">/* АДАПТИВ */</p>
+<p class="p1">@media (max-width:900px){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hero-grid{grid-template-columns:1fr;gap:40px}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hero-visual{min-height:300px;order:-1}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hero-emblem{width:min(100%,240px)}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.features{grid-template-columns:1fr}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.story{grid-template-columns:1fr;padding:28px 24px;gap:24px}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.story-art{order:-1}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.story-art svg{width:150px}</p>
+<p class="p1">}</p>
+<p class="p1">@media (max-width:720px){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.section{padding:64px 0}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.nav-links{position:fixed;top:68px;left:0;right:0;flex-direction:column;gap:2px;padding:14px 20px 20px;background:rgba(10,8,7,.98);border-bottom:1px solid var(--border);transform:translateY(-12px);opacity:0;pointer-events:none;transition:all .25s ease;max-height:calc(100vh - 68px);overflow-y:auto}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.nav-links.open{transform:none;opacity:1;pointer-events:auto}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.nav-links a{padding:13px 16px;font-size:14px}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.burger{display:block}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hero{padding:44px 0 28px;min-height:auto}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hero-stats{grid-template-columns:repeat(3,1fr);gap:16px;width:100%}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hero-stats .stat b{font-size:24px}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.cta-row{margin-bottom:36px}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn{flex:1;justify-content:center;padding:13px 20px}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.movies-grid,.figures-grid,.merch-grid{grid-template-columns:1fr}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.movie-card{grid-template-columns:1fr}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.movie-poster{aspect-ratio:2/3;border-right:0;border-bottom:1px solid var(--border)}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.movie-poster img{position:static;width:100%;height:100%}</p>
+<p class="p1">}</p>
+<p class="p1">@media (prefers-reduced-motion:reduce){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}</p>
+<p class="p1">}</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1">&lt;div class="bg"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="wrap nav"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="#home" class="brand" data-nav="home"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="brand-mark"&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="brand-text"&gt;&lt;b&gt;TRANSFORMERS&lt;/b&gt;&lt;small&gt;FAN HUB&lt;/small&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;ul class="nav-links" id="navLinks"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;&lt;a href="#home" data-nav="home"&gt;Главная&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;&lt;a href="#movies" data-nav="movies"&gt;Фильмы&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;&lt;a href="#figures" data-nav="figures"&gt;Фигурки&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;&lt;a href="#merch" data-nav="merch"&gt;Мерч&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;&lt;a href="#community" data-nav="community"&gt;Сообщество&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="burger" id="burger" aria-label="Меню"&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;main id="app"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- ГЛАВНАЯ --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="page" data-page="home"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="hero"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hero-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="hero-content anim"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="eyebrow"&gt;Фан-хаб · Вселенная трансформеров&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1&gt;Больше, чем&lt;br&gt;&lt;em&gt;машины&lt;/em&gt;&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="hero-sub"&gt;Фильмы, коллекционные фигурки, официальный мерч и живое сообщество. Твоя точка входа в Кибертрон.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="cta-row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;a href="#movies" class="btn btn-primary" data-nav="movies"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Смотреть фильмы</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;path d="M5 12h14M13 6l6 6-6 6"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;a href="#figures" class="btn btn-ghost" data-nav="figures"&gt;Коллекционные фигурки&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="hero-stats"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="stat"&gt;&lt;b&gt;9&lt;/b&gt;&lt;small&gt;фильмов&lt;/small&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="stat"&gt;&lt;b&gt;120&lt;span&gt;+&lt;/span&gt;&lt;/b&gt;&lt;small&gt;фигурок&lt;/small&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="stat"&gt;&lt;b&gt;40&lt;/b&gt;&lt;small&gt;лет истории&lt;/small&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="hero-visual anim anim-d1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="hero-badge hero-badge-1"&gt;&lt;span class="dot"&gt;&lt;/span&gt;Autobot Signal&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;svg class="hero-emblem" viewBox="0 0 240 260" aria-hidden="true"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;path class="mark" d="M120 14 L210 50 L210 150 Q210 215 120 246 Q30 215 30 150 L30 50 Z"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;path class="mark" d="M120 48 L180 72 L180 140 Q180 190 120 216 Q60 190 60 140 L60 72 Z" opacity=".6"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;rect x="85" y="105" width="20" height="20" class="eye"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;rect x="135" y="105" width="20" height="20" class="eye"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;path class="mark" d="M120 130 L120 168 M100 152 L120 172 L140 152"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="hero-badge hero-badge-2"&gt;&lt;span class="dot"&gt;&lt;/span&gt;Collector Mode&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- ЗАМЕНЕННЫЙ БЛОК С ТЕКСТОМ О ФИЛЬМЕ --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="story anim anim-d2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;О фильме &lt;em&gt;«Трансформеры»&lt;/em&gt;&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;«Трансфо́рмеры» (англ. Transformers) — американский научно-фантастический боевик 2007 года режиссёра Майкла Бэя, снятый по мотивам серии игрушек компании Hasbro и одноимённого мультсериала.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Фильм повествует о войне автоботов и десептиконов — разумных инопланетных роботов, способных трансформироваться в разнообразную технику. Предметом их раздора становится могущественный артефакт Великая Искра, который при неправильном использовании может принести в Галактику разрушения и смерть. Автоботы прилетают на Землю, чтобы защитить Искру от десептиконов, которые хотят использовать её в своих корыстных целях. Слабые, но смелые люди приходят на помощь автоботам.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="story-facts"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="fact"&gt;2007 год&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="fact"&gt;Реж. Майкл Бэй&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="fact"&gt;Hasbro&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="fact"&gt;Боевик&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="story-art"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg viewBox="0 0 200 200" aria-hidden="true"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;defs&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;linearGradient id="sg" x1="0" y1="0" x2="1" y2="1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;stop offset="0" stop-color="#f59e0b"/&gt;&lt;stop offset="1" stop-color="#ef4444"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/linearGradient&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/defs&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;circle cx="100" cy="100" r="88" fill="none" stroke="url(#sg)" stroke-width="2" opacity=".4"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;circle cx="100" cy="100" r="70" fill="none" stroke="url(#sg)" stroke-width="1" opacity=".25"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;path d="M100 32 L156 58 L156 128 Q156 162 100 178 Q44 162 44 128 L44 58 Z" fill="none" stroke="url(#sg)" stroke-width="4"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;path d="M100 56 L134 72 L134 118 Q134 140 100 152 Q66 140 66 118 L66 72 Z" fill="none" stroke="url(#sg)" stroke-width="2" opacity=".6"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;rect x="80" y="92" width="14" height="14" fill="url(#sg)"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;rect x="106" y="92" width="14" height="14" fill="url(#sg)"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;path d="M100 110 L100 134 M88 124 L100 136 L112 124" stroke="url(#sg)" stroke-width="3" fill="none" stroke-linecap="round"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="features"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#movies" class="feature-card anim anim-d1" data-nav="movies"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="feature-icon"&gt;&lt;svg viewBox="0 0 24 24"&gt;&lt;rect x="2" y="6" width="20" height="12" rx="2"/&gt;&lt;path d="M6 6v12M18 6v12M2 10h4M2 14h4M18 10h4M18 14h4"/&gt;&lt;/svg&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Фильмы&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Полная фильмография с описанием сюжета, режиссёрами и постерами — от 1986 до 2024.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="arrow"&gt;Смотреть все →&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#figures" class="feature-card anim anim-d2" data-nav="figures"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="feature-icon"&gt;&lt;svg viewBox="0 0 24 24"&gt;&lt;path d="M21 8l-9-5-9 5 9 5 9-5zM3 8v8l9 5 9-5V8M12 13v8"/&gt;&lt;/svg&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Фигурки&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Hasbro, Takara Tomy, threezero, YOLOPARK. От массовых линеек до лимитированных изданий.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="arrow"&gt;К коллекции →&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#merch" class="feature-card anim anim-d3" data-nav="merch"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="feature-icon"&gt;&lt;svg viewBox="0 0 24 24"&gt;&lt;path d="M8 4l-4 3 2 4 2-1v10h8V10l2 1 2-4-4-3c-1 2-3 3-4 3s-3-1-4-3z"/&gt;&lt;/svg&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Мерч&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Одежда, аксессуары и вещи с символикой автоботов и десептиконов.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="arrow"&gt;В магазин →&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- ФИЛЬМЫ --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="page" data-page="movies" hidden&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="wrap section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="section-head"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="eyebrow"&gt;01 · Фильмография&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="section-title"&gt;Все &lt;em&gt;фильмы&lt;/em&gt;&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="section-sub"&gt;Полная фильмография с официальными постерами и развёрнутым описанием: год, режиссёр, сюжет.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="movies-grid" id="moviesGrid"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- ФИГУРКИ --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="page" data-page="figures" hidden&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="wrap section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="section-head"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="eyebrow"&gt;02 · Коллекции&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="section-title"&gt;Коллекционные &lt;em&gt;фигурки&lt;/em&gt;&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="section-sub"&gt;Актуальные анонсы и релизы от ключевых производителей.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="filters" id="figureFilters"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="filter active" data-filter="all"&gt;Все бренды&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="filter" data-filter="hasbro"&gt;Hasbro&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="filter" data-filter="takara"&gt;Takara Tomy&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="filter" data-filter="threezero"&gt;threezero&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="filter" data-filter="yolopark"&gt;YOLOPARK&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="figures-grid" id="figuresGrid"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- МЕРЧ --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="page" data-page="merch" hidden&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="wrap section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="section-head"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="eyebrow"&gt;03 · Магазин&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="section-title"&gt;Официальный &lt;em&gt;мерч&lt;/em&gt;&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="section-sub"&gt;Одежда, аксессуары и вещи на каждый день.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="merch-grid" id="merchGrid"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- СООБЩЕСТВО --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="page" data-page="community" hidden&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="wrap section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="section-head"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="eyebrow"&gt;04 · Сообщество&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="section-title"&gt;Живое &lt;em&gt;сообщество&lt;/em&gt;&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="section-sub"&gt;Викторина, голосование и анонсы встреч.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="community-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="comm-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Кто ты из трансформеров?&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Ответь на один вопрос — узнай, чья искра тебе ближе.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="quiz-q"&gt;Что для тебя важнее всего?&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="quiz-opt" data-answer="optimus"&gt;Свобода для всех&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="quiz-opt" data-answer="megatron"&gt;Порядок и сила&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="quiz-opt" data-answer="bumblebee"&gt;Верность друзьям&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="quiz-opt" data-answer="starscream"&gt;Личная выгода&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="quiz-result" id="quizResult"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="comm-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Голосование&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Кто лучший лидер автоботов?&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="quiz-opt poll-opt" data-poll="optimus"&gt;Оптимус Прайм&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="quiz-opt poll-opt" data-poll="rodimus"&gt;Родаймес Прайм&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="quiz-opt poll-opt" data-poll="ultra"&gt;Ультра Магнус&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="poll-result" id="pollResult"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="comm-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Фан-встречи&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Онлайн-сходки, косплей-конкурсы и совместные просмотры. Скоро откроем канал.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="btn btn-ghost" disabled style="opacity:.55;cursor:not-allowed;align-self:flex-start;margin-top:auto"&gt;Скоро&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p1">&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="wrap foot"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;span&gt;© 2026 TF Fan Hub · Неофициальный фан-проект&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;span&gt;Hasbro · Takara Tomy — торговые марки их владельцев&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/footer&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1">/* ===== ДАННЫЕ: ФИЛЬМЫ ===== */</p>
+<p class="p1">const MOVIES = [</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>title:"Трансформеры",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>year:2007,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>type:"Игровой боевик · реж. Майкл Бэй",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>poster:"transformers.jpg", /* Используем локальное имя */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>desc:"«Трансформеры» (англ. Transformers) — американский научно-фантастический боевик 2007 года режиссёра Майкла Бэя, снятый по мотивам серии игрушек компании Hasbro и одноимённого мультсериала. Фильм повествует о войне автоботов и десептиконов — разумных инопланетных роботов, способных трансформироваться в разнообразную технику. Предметом их раздора становится могущественный артефакт Великая Искра, который при неправильном использовании может принести в Галактику разрушения и смерть. Автоботы прилетают на Землю, чтобы защитить Искру от десептиконов, которые хотят использовать её в своих корыстных целях. Слабые, но смелые люди приходят на помощь автоботам."</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>title:"Бамблби",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>year:2018,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>type:"Игровой приквел · реж. Трэвис Найт",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>poster:"bumblebee.jpg", /* Используем локальное имя */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>desc:"«Бамблби» (англ. Bumblebee) — американский научно-фантастический боевик 2018 года режиссёра Трэвиса Найта, приквел к фильму 2007 года. Действие происходит в 1987 году. После битвы на Кибертроне Бамблби скрывается на Земле в виде жёлтого «Фольксвагена Жука». Он знакомится с восемнадцатилетней Чарли Уотсон, которая помогает ему вспомнить, кто он. Вместе им предстоит защитить планету от десептиконов, идущих по следу."</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>title:"Трансформеры: Месть падших",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>year:2009,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>type:"Игровой боевик · реж. Майкл Бэй",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>poster:"https://upload.wikimedia.org/wikipedia/en/c/cb/TF2SteelPoster.jpg",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>desc:"«Трансформеры: Месть падших» (англ. Transformers: Revenge of the Fallen) — американский научно-фантастический боевик 2009 года режиссёра Майкла Бэя, продолжение фильма 2007 года. Сэм Уитвики, поступивший в колледж, обнаруживает осколок Великой Искры, который наделяет его видениями древних символов. Эти знания ведут к гробнице Праймов и к Фоллену — первому десептикону, который жаждет уничтожить Солнце с помощью Матрицы лидерства. Оптимус Прайм и автоботы вступают в решающую битву, чтобы остановить его."</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>title:"Трансформеры 3: Тёмная сторона Луны",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>year:2011,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>type:"Игровой боевик · реж. Майкл Бэй",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>poster:"https://upload.wikimedia.org/wikipedia/en/b/bf/Transformers_dark_of_the_moon_ver5.jpg",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>desc:"«Трансформеры 3: Тёмная сторона Луны» (англ. Transformers: Dark of the Moon) — американский научно-фантастический боевик 2011 года режиссёра Майкла Бэя, третий фильм серии. Автоботы узнают, что на обратной стороне Луны скрыт корабль Кибертрона с Сентинелом Праймом — наставником Оптимуса. Его пробуждение запускает цепь событий, ведущих к попытке десептиконов использовать космический мост, чтобы перебросить армию на Землю и поработить человечество."</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>title:"Трансформеры: Эпоха истребления",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>year:2014,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>type:"Игровой боевик · реж. Майкл Бэй",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>poster:"https://upload.wikimedia.org/wikipedia/en/0/0f/Transformers_Age_of_Extinction_poster.jpg",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>desc:"«Трансформеры: Эпоха истребления» (англ. Transformers: Age of Extinction) — американский научно-фантастический боевик 2014 года режиссёра Майкла Бэя, четвёртый фильм серии. Спустя пять лет после битвы в Чикаго человечество объявляет охоту на всех трансформеров. Механик Кейд Йегер случайно находит в заброшенном театре Оптимуса Прайма. Вместе с автоботами он вынужден противостоять наёмнику Локдауну, посланному Создателями, и корпорации, стремящейся создать собственных роботов."</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>title:"Трансформеры: Последний рыцарь",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>year:2017,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>type:"Игровой боевик · реж. Майкл Бэй",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>poster:"https://upload.wikimedia.org/wikipedia/en/2/26/Transformers_The_Last_Knight_poster.jpg",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>desc:"«Трансформеры: Последний рыцарь» (англ. Transformers: The Last Knight) — американский научно-фантастический боевик 2017 года режиссёра Майкла Бэя, пятый фильм серии. Оптимус Прайм отправляется в космос на поиски Создателей, но попадает под контроль Квинтессы и становится злодеем. Земля оказывается в центре древнего конфликта: последняя надежда человечества — Кейд Йегер и загадочная связь между рыцарями Кибертрона и королём Артуром."</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>title:"Трансформеры: Восхождение Звероботов",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>year:2023,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>type:"Игровой боевик · реж. Стивен Кейпл-младший",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>poster:"https://upload.wikimedia.org/wikipedia/en/1/1c/Transformers-_Rise_of_the_Beasts.jpg",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>desc:"«Трансформеры: Восхождение Звероботов» (англ. Transformers: Rise of the Beasts) — американский научно-фантастический боевик 2023 года режиссёра Стивена Кейпла-младшего. Действие разворачивается в 1994 году в Бруклине. Археолог Елена Уоллас и бывший военный Ноа Диас обнаруживают артефакт, способный открыть портал. Автоботы объединяются с максималами — звероподобными трансформерами — чтобы остановить Уникрона и его прислужников-террорконов."</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>title:"Трансформеры: Начало",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>year:2024,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>type:"Анимационный приквел · реж. Джош Кули",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>poster:"https://upload.wikimedia.org/wikipedia/en/8/8b/Transformers_One_poster.jpg",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>desc:"«Трансформеры: Начало» (англ. Transformers One) — американский анимационный научно-фантастический фильм 2024 года режиссёра Джоша Кули. Приквел, рассказывающий о юности Ориона Пакса и D-16 — будущих Оптимуса Прайма и Мегатрона. До войны они были друзьями и работали в шахтах Кибертрона, мечтая о большем. Их путь к вершине власти обернётся расколом, который навсегда изменит судьбу планеты."</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>title:"Трансформеры: Фильм",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>year:1986,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>type:"Анимация · реж. Нельсон Шин",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>poster:"https://upload.wikimedia.org/wikipedia/en/5/5f/Transformersanimatedfilmposter.jpg",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>desc:"«Трансформеры: Фильм» (англ. The Transformers: The Movie) — американский анимационный научно-фантастический фильм 1986 года режиссёра Нельсона Шина. Действие происходит в 2005 году, спустя двадцать лет после событий мультсериала. Уникрон — пожиратель планет — приближается к Кибертрону. После гибели Оптимуса Прайма молодой Хот Род должен найти в себе силы стать лидером и объединить автоботов против новой угрозы."</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">];</p>
+<p class="p2"><br></p>
+<p class="p1">/* ===== ДАННЫЕ: ФИГУРКИ ===== */</p>
+<p class="p1">const FIGURES = [</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name:"Optimus Prime (MDLX Comic Edition)", brand:"threezero", line:"MDLX", price:"~$150", status:"pre", accent:"#f59e0b",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>note:"Правая рука Мегатрона в комплекте. Релиз: апрель–июнь 2026." },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name:"Tarn (AMK PRO IDW)", brand:"yolopark", line:"AMK PRO", price:"~$90", status:"pre", accent:"#a855f7",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>note:"Предварительно окрашенный набор. Релиз: январь–март 2026." },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name:"Armada Jetfire (Age of the Primes)", brand:"hasbro", line:"Age of the Primes", price:"£91.99", status:"pre", accent:"#38bdf8",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>note:"20 см, 41 шаг трансформации, три мини-кона." },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name:"Megatron (Timelines Samurai)", brand:"hasbro", line:"Timelines", price:"~$60", status:"in", accent:"#ef4444",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>note:"Самурайский декор, трансформация в кабана. Эксклюзив." },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name:"Bumblebee (TS-01)", brand:"takara", line:"TS", price:"¥4,400", status:"in", accent:"#facc15",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>note:"Версия из «Начало». Релиз: июль 2025." },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name:"Megatron (TS-12)", brand:"takara", line:"TS", price:"¥8,800", status:"pre", accent:"#94a3b8",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>note:"Новая скульптура. Релиз: ноябрь 2025." },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name:"Decepticons part1 (Dramatic Capture)", brand:"takara", line:"Dramatic Capture", price:"¥16,500", status:"pre", accent:"#c084fc",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>note:"Сет: Скайварп и Рефлектор. Релиз: ноябрь 2025." },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name:"Optimus Prime (Spotlight Deluxe)", brand:"hasbro", line:"Spotlight", price:"TBA", status:"pre", accent:"#f97316",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>note:"Серый прототип + финальная версия. Релиз: июнь 2026." }</p>
+<p class="p1">];</p>
+<p class="p2"><br></p>
+<p class="p1">/* ===== ДАННЫЕ: МЕРЧ ===== */</p>
+<p class="p1">const MERCH = [</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name:"Футболка «Autobot Insignia»", price:"$29", desc:"Хлопок 100%, принт с логотипом автоботов. Размеры S–XXL.", icon:"tshirt" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name:"Худи «Decepticon»", price:"$59", desc:"Оверсайз-худи с вышивкой. Плотный футер, унисекс.", icon:"hoodie" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name:"Термокружка «Matrix»", price:"$24", desc:"450 мл, гравировка Матрицы лидерства.", icon:"mug" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name:"Рюкзак «Bumblebee»", price:"$54", desc:"Водоотталкивающий, 20 л, жёлтые акценты.", icon:"bag" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name:"Коврик для мыши «Cybertron»", price:"$19", desc:"Speed-коврик 90×40 см с картой Кибертрона.", icon:"mat" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name:"Набор постеров (3 шт.)", price:"$22", desc:"A2: Оптимус, Бамблби, Мегатрон. Плотная бумага.", icon:"poster" }</p>
+<p class="p1">];</p>
+<p class="p2"><br></p>
+<p class="p1">/* ===== SVG: ФИГУРКА ===== */</p>
+<p class="p1">function figureArt(i, accent){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>return '&lt;svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">    </span>+ '&lt;defs&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">    </span>+ '&lt;linearGradient id="fg' + i + '" x1="0" y1="0" x2="1" y2="1"&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">    </span>+ '&lt;stop offset="0" stop-color="#1a1512"/&gt;&lt;stop offset="1" stop-color="#0d0a08"/&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">    </span>+ '&lt;/linearGradient&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">    </span>+ '&lt;radialGradient id="fr' + i + '" cx="50%" cy="38%" r="65%"&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">    </span>+ '&lt;stop offset="0" stop-color="' + accent + '" stop-opacity="0.4"/&gt;&lt;stop offset="1" stop-color="' + accent + '" stop-opacity="0"/&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">    </span>+ '&lt;/radialGradient&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">    </span>+ '&lt;/defs&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">    </span>+ '&lt;rect width="200" height="200" fill="url(#fg' + i + ')"/&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">    </span>+ '&lt;rect width="200" height="200" fill="url(#fr' + i + ')"/&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">    </span>+ '&lt;ellipse cx="100" cy="170" rx="62" ry="9" fill="#000000" opacity="0.5"/&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">    </span>+ '&lt;g transform="translate(100 106)"&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">    </span>+ '&lt;path d="M-22 -55 L22 -55 L28 -38 L28 -18 L0 -6 L-28 -18 L-28 -38 Z" fill="#12161c" stroke="' + accent + '" stroke-width="2" stroke-linejoin="round"/&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">    </span>+ '&lt;rect x="-16" y="-40" width="12" height="8" rx="2" fill="' + accent + '"/&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">    </span>+ '&lt;rect x="4" y="-40" width="12" height="8" rx="2" fill="' + accent + '"/&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">    </span>+ '&lt;path d="M-34 -2 L34 -2 L42 55 L-42 55 Z" fill="#12161c" stroke="' + accent + '" stroke-width="2" stroke-linejoin="round"/&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">    </span>+ '&lt;path d="M0 6 L14 28 L0 50 L-14 28 Z" fill="' + accent + '" opacity="0.4"/&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">    </span>+ '&lt;rect x="-64" y="-2" width="26" height="40" rx="8" fill="#12161c" stroke="' + accent + '" stroke-width="2"/&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">    </span>+ '&lt;rect x="38" y="-2" width="26" height="40" rx="8" fill="#12161c" stroke="' + accent + '" stroke-width="2"/&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">    </span>+ '&lt;/g&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">    </span>+ '&lt;/svg&gt;';</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ===== ИКОНКИ МЕРЧА ===== */</p>
+<p class="p1">const ICONS = {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>tshirt: '&lt;path d="M30 24 L14 36 L24 48 L30 44 V84 H70 V44 L76 48 L86 36 L70 24 L58 24 C58 34 42 34 42 24 Z" stroke="currentColor" stroke-width="3" fill="none" stroke-linejoin="round"/&gt;',</p>
+<p class="p1"><span class="Apple-converted-space">  </span>hoodie: '&lt;path d="M30 26 L14 40 L24 52 L30 46 V86 H70 V46 L76 52 L86 40 L70 26 L58 26 C58 36 42 36 42 26 Z" stroke="currentColor" stroke-width="3" fill="none" stroke-linejoin="round"/&gt;&lt;path d="M42 26 C42 38 58 38 58 26" stroke="currentColor" stroke-width="3" fill="none"/&gt;',</p>
+<p class="p1"><span class="Apple-converted-space">  </span>mug: '&lt;path d="M18 26 H70 V78 C70 84 65 88 59 88 H29 C23 88 18 84 18 78 Z" stroke="currentColor" stroke-width="3" fill="none" stroke-linejoin="round"/&gt;&lt;path d="M70 38 H82 C88 38 88 56 82 56 H70" stroke="currentColor" stroke-width="3" fill="none"/&gt;',</p>
+<p class="p1"><span class="Apple-converted-space">  </span>bag: '&lt;rect x="20" y="32" width="60" height="54" rx="8" stroke="currentColor" stroke-width="3" fill="none"/&gt;&lt;path d="M34 32 V24 C34 16 66 16 66 24 V32" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/&gt;',</p>
+<p class="p1"><span class="Apple-converted-space">  </span>mat: '&lt;rect x="12" y="38" width="76" height="36" rx="6" stroke="currentColor" stroke-width="3" fill="none"/&gt;&lt;path d="M50 38 V74" stroke="currentColor" stroke-width="3" stroke-dasharray="4 4"/&gt;',</p>
+<p class="p1"><span class="Apple-converted-space">  </span>poster: '&lt;rect x="20" y="14" width="60" height="76" rx="4" stroke="currentColor" stroke-width="3" fill="none"/&gt;&lt;path d="M30 28 H70 M30 44 H60 M30 60 H70 M30 76 H55" stroke="currentColor" stroke-width="3" stroke-linecap="round"/&gt;'</p>
+<p class="p1">};</p>
+<p class="p1">function icon(name){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>return '&lt;svg viewBox="0 0 100 100" aria-hidden="true"&gt;' + (ICONS[name] || ICONS.poster) + '&lt;/svg&gt;';</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ===== РОУТЕР ===== */</p>
+<p class="p1">const PAGES = ["home","movies","figures","merch","community"];</p>
+<p class="p1">const rendered = { movies:false, figures:false, merch:false };</p>
+<p class="p2"><br></p>
+<p class="p1">function showPage(page){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (!PAGES.includes(page)) page = "home";</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.querySelectorAll("main &gt; .page").forEach(el =&gt; { el.hidden = (el.dataset.page !== page); });</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.querySelectorAll(".nav-links a").forEach(a =&gt; { a.classList.toggle("active", a.dataset.nav === page); });</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (page === "movies" &amp;&amp; !rendered.movies){ renderMovies(); rendered.movies = true; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (page === "figures" &amp;&amp; !rendered.figures){ renderFigures("all"); rendered.figures = true; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (page === "merch" &amp;&amp; !rendered.merch){ renderMerch(); rendered.merch = true; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>window.scrollTo(0, 0);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">document.querySelectorAll("[data-nav]").forEach(a =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>a.addEventListener("click", e =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>e.preventDefault();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const page = a.dataset.nav;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>closeMenu();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (location.hash.slice(1) === page) showPage(page);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>else location.hash = page;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>});</p>
+<p class="p1">});</p>
+<p class="p1">window.addEventListener("hashchange", () =&gt; showPage(location.hash.slice(1) || "home"));</p>
+<p class="p1">showPage(location.hash.slice(1) || "home");</p>
+<p class="p2"><br></p>
+<p class="p1">/* ===== МЕНЮ ===== */</p>
+<p class="p1">const burger = document.getElementById("burger");</p>
+<p class="p1">const navLinks = document.getElementById("navLinks");</p>
+<p class="p1">function closeMenu(){ burger.classList.remove("open"); navLinks.classList.remove("open"); }</p>
+<p class="p1">burger.addEventListener("click", () =&gt; { burger.classList.toggle("open"); navLinks.classList.toggle("open"); });</p>
+<p class="p2"><br></p>
+<p class="p1">/* ===== РЕНДЕР ФИЛЬМОВ (без фильтров) ===== */</p>
+<p class="p1">function renderMovies(){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const grid = document.getElementById("moviesGrid");</p>
+<p class="p1"><span class="Apple-converted-space">  </span>grid.innerHTML = MOVIES.map(m =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>return '&lt;article class="movie-card anim"&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">      </span>+ '&lt;div class="movie-poster"&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">      </span>+ '&lt;img src="' + m.poster + '" alt="Постер фильма ' + m.title + '" loading="lazy" onerror="this.style.display=\'none\'"&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">      </span>+ '&lt;span class="poster-year"&gt;' + m.year + '&lt;/span&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">      </span>+ '&lt;/div&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">      </span>+ '&lt;div class="movie-body"&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">      </span>+ '&lt;span class="movie-type"&gt;' + m.type + '&lt;/span&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">      </span>+ '&lt;h3&gt;' + m.title + '&lt;/h3&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">      </span>+ '&lt;p class="movie-desc"&gt;' + m.desc + '&lt;/p&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">      </span>+ '&lt;/div&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">      </span>+ '&lt;/article&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}).join("");</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ===== ФИГУРКИ ===== */</p>
+<p class="p1">function brandName(key){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>return { hasbro:"Hasbro", takara:"Takara Tomy", threezero:"threezero", yolopark:"YOLOPARK" }[key] || key;</p>
+<p class="p1">}</p>
+<p class="p1">function renderFigures(filter){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const grid = document.getElementById("figuresGrid");</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const list = filter === "all" ? FIGURES : FIGURES.filter(f =&gt; f.brand === filter);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>grid.innerHTML = list.map(f =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const idx = FIGURES.indexOf(f);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>return '&lt;article class="figure-card anim"&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">      </span>+ '&lt;div class="figure-image"&gt;' + figureArt(idx, f.accent) + '&lt;/div&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">      </span>+ '&lt;span class="figure-brand"&gt;' + brandName(f.brand) + '&lt;/span&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">      </span>+ '&lt;h3&gt;' + f.name + '&lt;/h3&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">      </span>+ '&lt;div class="figure-meta"&gt;' + f.line + ' · ' + f.note + '&lt;/div&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">      </span>+ '&lt;div class="figure-footer"&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">      </span>+ '&lt;span class="figure-price"&gt;' + f.price + '&lt;/span&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">      </span>+ '&lt;span class="badge-status ' + f.status + '"&gt;' + (f.status === "pre" ? "Предзаказ" : "В наличии") + '&lt;/span&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">      </span>+ '&lt;/div&gt;&lt;/article&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}).join("");</p>
+<p class="p1">}</p>
+<p class="p1">document.getElementById("figureFilters").addEventListener("click", e =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const btn = e.target.closest(".filter");</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (!btn) return;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.querySelectorAll("#figureFilters .filter").forEach(b =&gt; b.classList.remove("active"));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>btn.classList.add("active");</p>
+<p class="p1"><span class="Apple-converted-space">  </span>renderFigures(btn.dataset.filter);</p>
+<p class="p1">});</p>
+<p class="p2"><br></p>
+<p class="p1">/* ===== МЕРЧ ===== */</p>
+<p class="p1">function renderMerch(){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const grid = document.getElementById("merchGrid");</p>
+<p class="p1"><span class="Apple-converted-space">  </span>grid.innerHTML = MERCH.map(m =&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'&lt;article class="merch-card anim"&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">    </span>+ '&lt;div class="merch-visual"&gt;' + icon(m.icon) + '&lt;/div&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">    </span>+ '&lt;div class="merch-body"&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">    </span>+ '&lt;h3&gt;' + m.name + '&lt;/h3&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">    </span>+ '&lt;p&gt;' + m.desc + '&lt;/p&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">    </span>+ '&lt;div class="merch-footer"&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">    </span>+ '&lt;span class="merch-price"&gt;' + m.price + '&lt;/span&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">    </span>+ '&lt;button class="btn-sm" type="button"&gt;В корзину&lt;/button&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">    </span>+ '&lt;/div&gt;&lt;/div&gt;&lt;/article&gt;'</p>
+<p class="p1"><span class="Apple-converted-space">  </span>).join("");</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ===== ВИКТОРИНА ===== */</p>
+<p class="p1">const QUIZ = {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>optimus:"Ты — Оптимус Прайм. Сила в ответственности и вере в других.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>megatron:"Ты — Мегатрон. Ценишь порядок и не боишься брать своё.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>bumblebee:"Ты — Бамблби. Преданность и отвага — твои главные качества.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>starscream:"Ты — Старскрим. Хитрость и амбиции ведут тебя вперёд."</p>
+<p class="p1">};</p>
+<p class="p1">const quizResult = document.getElementById("quizResult");</p>
+<p class="p1">document.querySelectorAll(".quiz-opt[data-answer]").forEach(btn =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>btn.addEventListener("click", () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.querySelectorAll(".quiz-opt[data-answer]").forEach(b =&gt; b.classList.remove("correct"));</p>
+<p class="p1"><span class="Apple-converted-space">    </span>btn.classList.add("correct");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>quizResult.textContent = QUIZ[btn.dataset.answer] || "";</p>
+<p class="p1"><span class="Apple-converted-space">    </span>quizResult.classList.add("show");</p>
+<p class="p1"><span class="Apple-converted-space">  </span>});</p>
+<p class="p1">});</p>
+<p class="p2"><br></p>
+<p class="p1">/* ===== ГОЛОСОВАНИЕ ===== */</p>
+<p class="p1">const votes = { optimus:0, rodimus:0, ultra:0 };</p>
+<p class="p1">const pollResult = document.getElementById("pollResult");</p>
+<p class="p1">document.querySelectorAll(".poll-opt").forEach(btn =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>btn.addEventListener("click", () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>votes[btn.dataset.poll]++;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const total = Object.values(votes).reduce((a,b) =&gt; a+b, 0);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const pct = v =&gt; Math.round(v / total * 100) + "%";</p>
+<p class="p1"><span class="Apple-converted-space">    </span>pollResult.textContent = "Оптимус " + pct(votes.optimus) + " · Родаймес " + pct(votes.rodimus) + " · Ультра Магнус " + pct(votes.ultra) + " · всего: " + total;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>});</p>
+<p class="p1">});</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
